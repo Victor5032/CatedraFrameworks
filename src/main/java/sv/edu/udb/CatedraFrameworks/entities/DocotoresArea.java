@@ -1,18 +1,15 @@
 package sv.edu.udb.CatedraFrameworks.entities;
 
 import javax.persistence.*;
-import javax.print.Doc;
 import java.util.Date;
 
 @Entity
-@Table(name = "administrador_area")
-public class AdministradorArea {
+@Table(name = "doctores_area")
+public class DocotoresArea {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
-    private Integer administradorId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer doctoresAreaId;
 
     @Column(
             name = "estado",
@@ -22,45 +19,48 @@ public class AdministradorArea {
 
     @Column(
             name = "fecha_registro",
-            nullable = false
+            nullable = false,
+            updatable = false
     )
     private Date fechaRegistro;
+
     @PrePersist
-    protected void setFechaRegistro(){
+    protected void setFechaRegistro() {
         this.fechaRegistro = new Date();
     }
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(
             name = "id_area",
             nullable = false
     )
     private Area idArea;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(
             name = "id_doctor",
             nullable = false
     )
     private Doctor idDoctor;
-    //getters/ setters / constructors
+
+//    getters/setters/ constructors
 
 
-    public AdministradorArea() {
+    public DocotoresArea() {
     }
 
-    public AdministradorArea(Integer estado, Area idArea, Doctor idDoctor) {
+    public DocotoresArea(Integer estado, Area idArea, Doctor idDoctor) {
         this.estado = estado;
         this.idArea = idArea;
         this.idDoctor = idDoctor;
     }
 
-    public Integer getAdministradorId() {
-        return administradorId;
+    public Integer getDoctoresAreaId() {
+        return doctoresAreaId;
     }
 
-    public void setAdministradorId(Integer administradorId) {
-        this.administradorId = administradorId;
+    public void setDoctoresAreaId(Integer doctoresAreaId) {
+        this.doctoresAreaId = doctoresAreaId;
     }
 
     public Integer getEstado() {
@@ -97,8 +97,8 @@ public class AdministradorArea {
 
     @Override
     public String toString() {
-        return "AdministradorArea{" +
-                "administradorId=" + administradorId +
+        return "DocotoresArea{" +
+                "doctoresAreaId=" + doctoresAreaId +
                 ", estado=" + estado +
                 ", fechaRegistro=" + fechaRegistro +
                 ", idArea=" + idArea +
