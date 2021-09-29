@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "doctores_area")
-public class DocotoresArea {
+public class DoctoresArea {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,10 +46,10 @@ public class DocotoresArea {
 //    getters/setters/ constructors
 
 
-    public DocotoresArea() {
+    public DoctoresArea() {
     }
 
-    public DocotoresArea(Integer estado, Area idArea, Doctor idDoctor) {
+    public DoctoresArea(Integer estado, Area idArea, Doctor idDoctor) {
         this.estado = estado;
         this.idArea = idArea;
         this.idDoctor = idDoctor;
