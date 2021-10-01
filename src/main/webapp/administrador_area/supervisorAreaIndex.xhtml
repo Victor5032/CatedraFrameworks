@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+    <div class="p-grid">
+        <div class="fa-columns">
+            <h1 class="p-text-bold">Bienvenid@ <p:outputLabel value="nombres del doctor de area"/></h1>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="fa-columns">
+            <div class="fa-car">
+                <p:card style="width: 25em">
+                    <f:facet name="header">
+                        <img alt="user header" width="40" height="200"
+                             src="https://th.bing.com/th/id/OIP.VnVvvPYSOZExURuscFs_kwHaHa?w=201&amp;h=200&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7"/>
+                    </f:facet>
+                    <f:facet name="title">
+                        Doctor fulano de tal
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        Areal del doctor <p:outputLabel value="x area"/>
+                        <p:separator/>
+                        Correo del doctor <p:outputLabel value="x correo"/>
+                    </f:facet>
+
+                    <f:facet name="footer">
+                        <p:commandButton icon="pi pi-folder-open" value="Registros"/>
+                        <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary"
+                                         style="margin-left: .5em"/>
+                    </f:facet>
+                </p:card>
+            </div>
+        </div>
+
+    </div>
+</h:body>
+</html>
